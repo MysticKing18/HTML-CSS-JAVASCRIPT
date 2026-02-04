@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cagas Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0D1B2A;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background: rgba(27, 43, 50, 0.95);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #E0E1DD;
+            box-shadow: 0 8px 25px rgba(65, 90, 119, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h1 {
+            color: #E0E1DD;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            color: #E0E1DD;
+            font-size: 1.2em;
+        }
+
+       
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+       
+        .card {
+            background: #1B2B32;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(65, 90, 119, 0.4);
+        }
+
+        .card h2 {
+            color: #E0E1DD;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #415A77;
+            padding-bottom: 10px;
+        }
+
+        
+        .motto-box {
+            background: linear-gradient(135deg, #0D1B2A 0%, #1B2B32 50%, #415A77 100%);
+            color: #E0E1DD;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            box-shadow: 0 8px 30px rgba(65, 90, 119, 0.3);
+        }
+
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-link img {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .social-link img:hover {
+            box-shadow: 0 6px 25px rgba(65, 90, 119, 0.6);
+        }
+
+        .social-link p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #778DA9;
+        }
+
+       
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th {
+            background: linear-gradient(135deg, #0D1B2A 0%, #415A77 100%);
+            color: #E0E1DD;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid #415A77;
+            color: #E0E1DD;
+        }
+
+        table tr:hover {
+            background: #0D1B2A;
+        }
+
+       
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .list-section h3 {
+            color: #778DA9;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #0D1B2A;
+            border-left: 4px solid #415A77;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            color: #E0E1DD;
+        }
+
+        ul li:hover {
+            background: #1B2B32;
+        }
+
+        .likes li {
+            border-left-color: #4ade80;
+        }
+
+        .dislikes li {
+            border-left-color: #f87171;
+        }
+
+       
+        .signature-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 30px;
+        }
+
+        .signature-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 20px rgba(65, 90, 119, 0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .signature-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 12px 30px rgba(119, 141, 169, 0.8));
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .signature-text {
+            color: #778DA9;
+            font-size: 1.2em;
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+   
+        
+       
+        
+        /* Tablet */
+        @media (max-width: 768px) {
+            .profile-info h1 {
+                font-size: 2em;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.5em;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .social-links {
+                gap: 20px;
+            }
+
+            .social-link img {
+                width: 60px;
+                height: 60px;
+            }
+
+            table th, table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .signature-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .signature-text {
+                font-size: 1em;
+            }
+        }
+
+        /* Smartphone */
+        @media (max-width: 480px) {
+            .profile-info h1 {
+                font-size: 1.5em;
+            }
+
+            .profile-info p {
+                font-size: 1em;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card h2 {
+                font-size: 1.3em;
+            }
+
+            .motto-box {
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            .social-link img {
+                width: 50px;
+                height: 50px;
+            }
+
+            table {
+                font-size: 0.8em;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+
+            .signature-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .signature-text {
+                font-size: 0.9em;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="header-content">
+            <div class="profile-section">
+                <img src="Mypic-removebg-preview.png" alt="Roewyn Luke R. Cagas" class="profile-img">
+                <div class="profile-info">
+                    <h1>Roewyn Luke R. Cagas</h1>
+                    <p style="color: #778DA9; font-style: italic;">2nd Year IT Student</p>
+                    <p style="font-size: 1em; color: #E0E1DD;">Born: October 22, 2005</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+    <div class="container">
+        
+        <div class="card">
+            <div class="motto-box">
+                <p><strong><em>When life gets hard, pause, find peace, and think positively. Trust in God, ask for His guidance, and let Him help ease your worries.</em></strong></p>
+            </div>
+        </div>
+
+       
+        <div class="card">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #E0E1DD;">
+                Hi! I'm Luke. To be honest, I'm a simple and sometimes boring guy who is always thinking of ways to improve myself. Things don't always go as planned, but naturally, I keep moving forward no matter what happens in my life. There are moments when I'm unsure if I will succeed, but I choose to trust the process and believe in God's plan for me. I will continue to wait, strive, and grow until the right time comes.
+            </p>
+            <br>
+            <h2>Personal Info</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px; color: #E0E1DD;">
+                I come from a family of five, and I am the middle child. Among my siblings, I consider myself the most obedient and responsible.
+            </p>
+        </div>
+
+       
+        <div class="card">
+            <h2>Educational Background</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Educational Level</th>
+                        <th>School Graduated</th>
+                        <th>Year Attended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Elementary</td>
+                        <td>Anibongan Elementary School</td>
+                        <td>2017-2018</td>
+                    </tr>
+                    <tr>
+                        <td>Junior High</td>
+                        <td>Nabunturan National High School</td>
+                        <td>2021-2022</td>
+                    </tr>
+                    <tr>
+                        <td>Senior High</td>
+                        <td>Nabunturan National High School</td>
+                        <td>2023-2024</td>
+                    </tr>
+                    <tr>
+                        <td>College</td>
+                        <td>University of Mindanao</td>
+                        <td>2024 - Present</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div class="card">
+            <h2>Things I Like & Dislike</h2>
+            <div class="two-column">
+                <div class="list-section">
+                    <h3 style="color: #4ade80;">👍 Likes</h3>
+                    <ul class="likes">
+                        <li>Learning new skills</li>
+                        <li>Spending time with family</li>
+                        <li>Reading books</li>
+                        <li>Playing video games</li>
+                        <li>Listening to music</li>
+                    </ul>
+                </div>
+                <div class="list-section">
+                    <h3 style="color: #f87171;">👎 Dislikes</h3>
+                    <ul class="dislikes">
+                        <li>Dishonesty</li>
+                        <li>Procrastination</li>
+                        <li>Negativity</li>
+                        <li>Laziness</li>
+                        <li>Rudeness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <h2>Favorite Social Media Platforms</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    <p>Facebook</p>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                    <p>Instagram</p>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+                    <p>YouTube</p>
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="signature-section">
+            <img src="R.png" alt="RO BEAT Logo" class="signature-logo">
+            <p class="signature-text">Signature Logo</p>
+        </div>
+    </div>
+
+</body>
+</html>
