@@ -1,3 +1,3 @@
 ACTIVITY FOLDER
 
-This repo is exclusively for for school activities.
+This repo is exclusively for school activities.
