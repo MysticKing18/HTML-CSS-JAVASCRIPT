@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+
+
+@media (max-width: 576px) {
+.page-header h1 {
+    font-size: 1.2rem;
+}
+
+.page-header p {
+    font-size: 0.8rem;
+}
+
+.btn-action {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-right: 0 !important;
+}
+
+.table-card {
+    padding-top: 10px;
+    margin-bottom: 50px;
+ }
+}
+
+        
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Navigation Part */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 30px rgba(50, 52, 143, 0.3);
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #0066ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 0 10px rgba(50, 52, 143, 0.3);
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: #0066ff;
+    animation: pulse 2s infinite;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    transition: all 0.05s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #0066ff;
+    transform: translateY(-2px);
+}
+
+
+/* Intro */
+
+.hyundai-section {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+
+
+.hyundai-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: #2600ff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(54, 5, 253, 0.8);  
+    animation: glow 5s ease-in-out infinite;  
+}
+
+.hyundai-section p {
+    font-size: 22.4px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+
+
+/* Carousel */
+.carousel {
+    max-width: 1400px;
+    margin: 0 auto 80px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 123, 255, 0.4);
+    border: 2px solid rgba(0, 123, 255, 0.4);
+}
+
+.carousel-item {
+    height: 600px;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.carousel-caption {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+    padding: 40px;
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.carousel-caption h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #0066ff;
+    text-shadow: 0 0 10px rgba(0, 102, 255, 0.8);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+
+/* Card Section */
+.cards-section {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: #070144;
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #2603c2, transparent);
+    margin: 15px auto;
+}
+
+.car-card {
+    margin-bottom: 30px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 40px rgba(68, 0, 255, 0.3);
+    border: 2px solid rgba(68, 0, 255, 0.2);
+}
+
+.car-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(76, 0, 255, 0.6);
+    border-color: #2600ff;
+}
+
+.car-card img {
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s;
+    filter: brightness(0.9);
+}
+
+.car-card:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+}
+
+.card-body {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: #3700ff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-text {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.specs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 110, 255, 0.3);  
+    /* border-top is the color line inside the specs (don't mind this comment it's just for the web-developer) */
+}
+
+.spec-item {
+    text-align: center;
+}
+
+.spec-label {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.spec-value {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.border-line {
+    color: rgb(10, 167, 230);
+    border-width: 1px;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    border-top: 2px solid rgba(17, 0, 255, 0.3);
+}
+
+.footer h5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2f00ff;
+}
+
+.footer-icons {
+    font-size: 1.8rem;
+     margin: 25px 0;
+}
+
+.footer-icons a {
+    color: white;
+    margin: 0 20px;
+    transition: all 0.3s;
+}
+
+#copyrights {
+    color: rgb(84, 94, 235);
+
+}
+
+.footer-icons a:hover {
+    color: #002fff;
+    transform: translateY(-5px);
+}
